@@ -33,14 +33,12 @@ const nodemailer = require("nodemailer");
 
 const sendEmail = async (options) => {
   const transporter = nodemailer.createTransport({
-    // เปลี่ยนจาก "sandbox.smtp.mailtrap.io" เป็น IP ของ Mailtrap โดยตรง
     host: "sandbox.smtp.mailtrap.io", 
-    port: 587, // หรือลองเปลี่ยนเป็น 587
+    port: 587, 
     auth: {
-      user: process.env.EMAIL_USER, //
-      pass: process.env.EMAIL_PASS, //
+      user: process.env.EMAIL_USER, 
+      pass: process.env.EMAIL_PASS, 
     },
-    // บังคับให้ข้ามปัญหาเรื่อง IPv6 และ SSL
     pool: false,
     secure: false,
     tls: {

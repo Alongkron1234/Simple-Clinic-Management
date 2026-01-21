@@ -6,7 +6,6 @@ const storage = multer.diskStorage({
         cb(null, "uploads/")
     },
     filename: (req, file, cb) => {
-    // สร้างชื่อไฟล์ใหม่: profile-ID-TIMESTAMP.jpg เพื่อกันชื่อซ้ำ
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1E9);
     cb(null, "profile-" + uniqueSuffix + path.extname(file.originalname));
   }
