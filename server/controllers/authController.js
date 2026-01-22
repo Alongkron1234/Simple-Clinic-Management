@@ -120,7 +120,8 @@ exports.getMe = async (req, res) => {
   }
 
   delete user.password;
-  res.json(user);
+  const userWithRole = { ...user, role }
+  res.json(userWithRole);
 };
 
 exports.updateProfileImage = async (req, res) => {
